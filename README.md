@@ -31,7 +31,7 @@ All installations should already be installed but if the required packages are m
 
 To run this application, you will need to go into your terminal and type in "node index.js" into the command line. You will then be prompted to answer some questions regarding what kind of logo you would like. Once you are done answering all the questions, the generator will create a logo.svg file within the "examples" folder. In order to view your logo, just click and drag the file on a browser of your choice.
 
-[Tutorial]()
+[Tutorial](https://drive.google.com/file/d/16PJJjgamT3q0Ez9sGO1iIItOvtt2atPp/view)
 
 ## Credits
 
