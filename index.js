@@ -68,11 +68,44 @@ class CLI {
         },
       ])
       .then((answers) => {
-        this.answers;
+        this.generateLogo(answers);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
+  }
+
+  generateLogo(answers) {
+    let shapes;
+    let texts;
+
+    switch (answers.shape.toLowerCase()) {
+      case "circle":
+        shapes = `<circle cx="150" cy="100" r="80" fill="${answers.shapeColor}"/>`;
+        texts = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>`;
+      break;
+      case "square":
+        shapes = `<rect x="70" y="30" width="160" height="200" fill="${answers.shapeColor}"/>`;
+        texts = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>`;
+      break;
+      case "triangle":
+        shapes = `<polygon points="150 10 20 180 290 180" fill="${answers.shapeColor}"/>`;
+        texts = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>`;
+      break;
+    }
+
+    const svgTemplate = `
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
+        ${shapes}
+        ${texts}
+    </svg>
+    `;
+
+    // Save the SVG to a file with a unique filename
+    const filename = path.join('examples', 'logo.svg');
+    fs.writeFileSync(filename, svgTemplate);
+
+    console.log("Generated logo.svg");
   }
 }
 
