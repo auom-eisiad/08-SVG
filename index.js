@@ -81,7 +81,7 @@ class CLI {
 
     switch (answers.shape.toLowerCase()) {
       case "circle":
-        shapes = `<circle cx="150" cy="100" r="80" fill="${answers.shapeColor}"/>`;
+        shapes = `<circle cx="150" cy="110" r="80" fill="${answers.shapeColor}"/>`;
         texts = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>`;
       break;
       case "square":
